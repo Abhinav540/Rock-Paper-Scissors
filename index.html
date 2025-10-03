@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rock Paper Scissors — Gesture (Keyboard) Input</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>Rock · Paper · Scissors — Gesture Input (R / P / S)</h1>
+        <p class="lead">
+          Press <strong>R</strong> = Rock, <strong>P</strong> = Paper, 
+          <strong>S</strong> = Scissors, <strong>Enter</strong> = Restart<br>
+          5 second timer for each round. If you don't pick, a random choice will be assigned.
+        </p>
+      </header>
+
+      <div class="top">
+        <!-- Left panel -->
+        <div class="panel" id="leftPanel">
+          <div class="info-row">
+            <div>Round: <span id="roundText" class="big">1</span></div>
+            <div>Timer: <span id="timerText" class="big">5s</span></div>
+          </div>
+
+          <div style="display:flex;gap:10px;align-items:center;justify-content:center;">
+            <div style="flex:1;">
+              <div style="text-align:center;color:#666;font-size:13px;">Your choice</div>
+              <div id="yourChoice" class="choice-display">—</div>
+              <div id="yourChoiceLabel" class="choice-label">waiting</div>
+            </div>
+
+            <div style="flex:1;">
+              <div style="text-align:center;color:#666;font-size:13px;">Computer</div>
+              <div id="compChoice" class="choice-display">—</div>
+              <div id="compChoiceLabel" class="choice-label">waiting</div>
+            </div>
+          </div>
+
+          <div style="text-align:center;margin-top:12px;">
+            <div class="hands" role="group" aria-label="choices">
+              <button id="btnRock" class="btn">✊ Rock (R)</button>
+              <button id="btnPaper" class="btn">✋ Paper (P)</button>
+              <button id="btnScissors" class="btn">✌️ Scissors (S)</button>
+            </div>
+
+            <div id="roundResult" class="result">Make your move</div>
+
+            <div style="margin-top:10px;text-align:center;">
+              <button id="restartBtn" class="restart">Restart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right panel -->
+        <div class="panel" id="rightPanel">
+          <h3 style="margin-top:0;margin-bottom:8px;">Round History</h3>
+          <div style="overflow:auto;">
+            <table>
+              <thead>
+                <tr><th>#</th><th>You</th><th>Computer</th><th>Result</th></tr>
+              </thead>
+              <tbody id="historyBody"></tbody>
+            </table>
+          </div>
+
+          <div class="score" style="margin-top:12px;">
+            <div>You: <span id="youScore">0</span></div>
+            <div>Computer: <span id="compScore">0</span></div>
+            <div>Draws: <span id="drawScore">0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
