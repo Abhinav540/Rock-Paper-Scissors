@@ -25,3 +25,7 @@ Each round has a **5-second timer**; if the player does not choose in time, a **
 ├── index.html # Main game UI
 ├── style.css # Styling & layout
 └── script.js # Game logic and interactivity
+
+## live at
+- https://rock-paper-scissors-six-henna.vercel.app
+
